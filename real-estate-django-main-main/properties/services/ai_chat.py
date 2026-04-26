@@ -1,8 +1,15 @@
 import json
 import re
 import requests
+import os
 
-OLLAMA_URL = "http://localhost:11434/api/generate"
+# OLLAMA_URL = "http://localhost:11434/api/generate"
+
+OLLAMA_URL = os.getenv(
+    "OLLAMA_URL",
+    "http://ollama:11434/api/generate"
+)
+
 OLLAMA_MODEL = "llama3.2:3b"
 
 SYSTEM_PROMPT = """
